@@ -1,0 +1,39 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "rules": {
+    "max-len": [
+      "error",
+      120,
+      2,
+      {
+        "ignoreUrls": true,
+        "ignoreComments": false,
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ],
+    "import/no-extraneous-dependencies": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "object-curly-newline": "off",
+    "import/prefer-default-export": "off",
+    "function-paren-newline": "off",
+    "no-unused-expressions": "off",
+    "no-irregular-whitespace": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "semi": [
+      1,
+      "never"
+    ]
+  }
+}
