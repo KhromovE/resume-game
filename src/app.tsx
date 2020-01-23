@@ -2,11 +2,11 @@ import React from 'react'
 import { Stage } from '@inlet/react-pixi'
 
 type Options = {
-  transparent?: boolean
+  backgroundColor?: number
 }
 
 const options: Options = {
-  transparent: true,
+  backgroundColor: 0xffffff,
 }
 
 export const App: React.SFC = () => (
