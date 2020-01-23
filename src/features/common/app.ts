@@ -1,13 +1,11 @@
 import * as PIXI from 'pixi.js'
 
-const app = new PIXI.Application({
-    width: 256,
-    height: 256,
-    antialias: true,
-    transparent: false,
-    resolution: 1,
-    backgroundColor: 0x061639,
-    autoDensity: true,
+export const app = new PIXI.Application({
+  antialias: true,
+  transparent: false,
+  resolution: 1,
+  backgroundColor: 0xffffff,
+  autoDensity: true,
 })
 app.renderer.view.style.position = 'absolute'
 app.renderer.view.style.display = 'block'
