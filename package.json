@@ -41,6 +41,7 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "parcel": "^1.12.4",
     "prettier": "^1.19.1",
+    "ramda": "^0.27.0",
     "typescript": "^3.7.2"
   }
 }
