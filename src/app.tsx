@@ -1,5 +1,5 @@
 import React from 'react'
 
-import { Map } from './features/map'
+import { Main } from './scenes'
 
-export const App: React.SFC = () => <Map />
+export const App: React.SFC = () => <Main />
