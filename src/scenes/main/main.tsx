@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Stage } from '@inlet/react-pixi'
 
-import { Map } from '../../features/map'
+import { Map } from '../../features/game'
 
 type Options = {
   backgroundColor?: number
