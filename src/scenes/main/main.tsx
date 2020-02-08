@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Stage } from '@inlet/react-pixi'
 
 import { Map } from '../../features/game'
+import { SceneTemplate } from '../../ui/templates'
 
 type Options = {
   backgroundColor?: number
@@ -12,7 +13,9 @@ const options: Options = {
 }
 
 export const Main: React.SFC = () => (
-  <Stage width={window.innerWidth} height={window.innerHeight} options={options}>
-    <Map />
-  </Stage>
+  <SceneTemplate>
+    <Stage width={920} height={955} options={options}>
+      <Map />
+    </Stage>
+  </SceneTemplate>
 )
