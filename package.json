@@ -19,8 +19,9 @@
   "license": "ISC",
   "dependencies": {
     "@inlet/react-pixi": "^1.1.13",
-    "@types/ramda": "^0.26.40",
-    "pixi.js": "^5.2.0",
+    "effector": "^20.11.5",
+    "effector-react": "^20.6.0",
+    "ramda": "^0.27.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "styled-components": "^5.0.1"
@@ -28,6 +29,7 @@
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@types/pixi.js": "^5.0.0",
+    "@types/ramda": "^0.26.41",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
     "@types/styled-components": "^4.4.2",
@@ -47,7 +49,6 @@
     "parcel": "^1.12.4",
     "parcel-plugin-bundle-visualiser": "^1.2.0",
     "prettier": "^1.19.1",
-    "ramda": "^0.27.0",
     "typescript": "^3.7.2"
   }
 }
