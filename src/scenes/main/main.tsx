@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { Stage } from '@inlet/react-pixi'
 
 import { Map } from '../../features/game'

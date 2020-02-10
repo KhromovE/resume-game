@@ -1,16 +1,16 @@
-import * as React from 'react'
+import React from 'react'
 import { Container, Sprite } from '@inlet/react-pixi'
-import { Point } from 'pixi.js'
 
-import tvSprite from '../../../../assets/room.svg'
+import roomSprite from '../../../../assets/room.svg'
+import laptopSprite from '../../../../assets/laptop.svg'
+import tableSprite from '../../../../assets/table.svg'
 
-const obsp = new Point(1, 0.5)
-const spriteScale = new Point(1, 2)
-
-export const Map: React.SFC = () => {
-  return (
-    <Container scale={obsp}>
-      <Sprite image={tvSprite} scale={spriteScale} />
+export const Map: React.SFC = () => (
+  <Container>
+    <Sprite image={roomSprite} />
+    <Container position={[16, 425]}>
+      <Sprite image={laptopSprite} position={[431, 418]} />
+      <Sprite image={tableSprite} />
     </Container>
-  )
-}
+  </Container>
+)
