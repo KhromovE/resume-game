@@ -1,24 +1,47 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
-type Props = {
+type GameFieldProps = {
   background: React.ReactNode
+  content: {
+    left: number
+    top: number
+    height: number
+    width: number
+  }
+}
+
+type ContentProps = {
+  top: number
+  left: number
+  height: number
+  width: number
 }
 
 const Wrapper = styled.div`
   position: relative;
 `
 
-const Content = styled.div`
+const Content = styled.div<ContentProps>`
   position: absolute;
-  left: 0;
-  top: 0;
+  ${({ left, top, height, width }): FlattenSimpleInterpolation => css`
+    left: ${left}px;
+    top: ${top}px;
+    height: ${height}px;
+    width: ${width}px;
+  `}
 `
 
-export const GameField: React.SFC<Props> = ({ children, background }) => (
+export const GameField: React.SFC<GameFieldProps> = ({
+  children,
+  background,
+  content: { top, left, height, width },
+}) => (
   <Wrapper>
     {background}
-    <Content>{children}</Content>
+    <Content top={top} left={left} height={height} width={width}>
+      {children}
+    </Content>
   </Wrapper>
 )
 
