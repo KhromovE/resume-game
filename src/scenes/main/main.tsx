@@ -1,20 +1,18 @@
 import React from 'react'
-import { Stage } from '@inlet/react-pixi'
+// import { Stage } from '@inlet/react-pixi'
+import styled from 'styled-components'
 
 import { Map } from '../../features/game'
 import { SceneTemplate } from '../../ui/templates'
 
-type Options = {
-  backgroundColor?: number
-}
-
-const options: Options = {
-  backgroundColor: 0xffffff,
-}
+const Stage = styled.div`
+  width: 920px;
+  height: 955px;
+`
 
 export const Main: React.SFC = () => (
   <SceneTemplate>
-    <Stage width={920} height={955} options={options}>
+    <Stage>
       <Map />
     </Stage>
   </SceneTemplate>

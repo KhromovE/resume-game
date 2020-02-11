@@ -18,7 +18,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@inlet/react-pixi": "^1.1.13",
     "effector": "^20.11.5",
     "effector-react": "^20.6.0",
     "ramda": "^0.27.0",
@@ -29,7 +28,6 @@
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@svgr/parcel-plugin-svgr": "^5.1.0",
-    "@types/pixi.js": "^5.0.0",
     "@types/ramda": "^0.26.41",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
