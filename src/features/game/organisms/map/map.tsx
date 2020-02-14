@@ -3,7 +3,8 @@ import { GameField } from '../../templates'
 
 import Room from '../../../../assets/room.svg'
 import Laptop from '../../../../assets/laptop.svg'
-import Tablet from '../../../../assets/table.svg'
+import Table from '../../../../assets/table.svg'
+import { GameObject } from '../../molecules'
 
 const contentProps = {
   top: 423,
@@ -12,9 +13,13 @@ const contentProps = {
   width: 887,
 }
 
-export const Map: React.SFC = () => (
+export const Map: React.FC = () => (
   <GameField background={<Room />} content={contentProps}>
-    <Laptop />
-    <Tablet />
+    <GameObject>
+      <Table />
+    </GameObject>
+    <GameObject>
+      <Laptop />
+    </GameObject>
   </GameField>
 )

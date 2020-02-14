@@ -1,2 +1,2 @@
-export { GameField } from './game-field'
+export { Table } from './table'
 export { GameObject } from './game-object'

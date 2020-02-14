@@ -10,7 +10,7 @@ const Stage = styled.div`
   height: 955px;
 `
 
-export const Main: React.SFC = () => (
+export const Main: React.FC = () => (
   <SceneTemplate>
     <Stage>
       <Map />

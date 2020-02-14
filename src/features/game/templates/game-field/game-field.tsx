@@ -32,7 +32,7 @@ const Content = styled.div<ContentProps>`
   `}
 `
 
-export const GameField: React.SFC<GameFieldProps> = ({
+export const GameField: React.FC<GameFieldProps> = ({
   children,
   background,
   content: { top, left, height, width },
