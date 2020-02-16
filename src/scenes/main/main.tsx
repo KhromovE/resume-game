@@ -1,5 +1,4 @@
 import React from 'react'
-// import { Stage } from '@inlet/react-pixi'
 import styled from 'styled-components'
 
 import { Map } from '../../features/game'

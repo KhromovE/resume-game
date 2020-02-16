@@ -1,3 +1,3 @@
 import { createEvent } from 'effector'
 
-const updateGameObject = createEvent()
+export const createGameObject = createEvent()

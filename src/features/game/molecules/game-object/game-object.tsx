@@ -1,8 +1,27 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
-const Wrapper = styled.div`
+type ContentProps = {
+  top: number
+  left: number
+}
+
+const Wrapper = styled.div<ContentProps>`
   position: absolute;
+
+  ${({ left, top }): FlattenSimpleInterpolation => css`
+    left: ${left}px;
+    top: ${top}px;
+  `}
 `
 
-export const GameObject: React.FC = ({ children }) => <Wrapper>{children}</Wrapper>
+type Props = {
+  x: number
+  y: number
+}
+
+export const GameObject: React.FC<Props> = ({ x, y, children }) => (
+  <Wrapper top={y} left={x}>
+    {children}
+  </Wrapper>
+)

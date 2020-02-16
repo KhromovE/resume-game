@@ -24,6 +24,8 @@ const Wrapper = styled.div`
 
 const Content = styled.div<ContentProps>`
   position: absolute;
+  transform: rotateX(54.7deg) rotateZ(45deg);
+
   ${({ left, top, height, width }): FlattenSimpleInterpolation => css`
     left: ${left}px;
     top: ${top}px;
