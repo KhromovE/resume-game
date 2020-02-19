@@ -1,6 +1,8 @@
 import React from 'react'
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
+import { Point } from '../../../../lib/createGameObject'
+
 type ContentProps = {
   top: number
   left: number
@@ -15,12 +17,7 @@ const Wrapper = styled.div<ContentProps>`
   `}
 `
 
-type Props = {
-  x: number
-  y: number
-}
-
-export const GameObject: React.FC<Props> = ({ x, y, children }) => (
+export const GameObject: React.FC<Point> = ({ x, y, children }) => (
   <Wrapper top={y} left={x}>
     {children}
   </Wrapper>

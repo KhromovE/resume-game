@@ -1,3 +1,5 @@
 import { createEvent } from 'effector'
 
-export const createGameObject = createEvent()
+import { Point } from '../../../lib/createGameObject'
+
+export const changeCharacterPosition = createEvent<Point>()

@@ -1,6 +1,8 @@
 import React from 'react'
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
+import { Measurements } from '../../../../lib/createGameObject'
+
 type GameFieldProps = {
   background: React.ReactNode
   content: {
@@ -14,9 +16,7 @@ type GameFieldProps = {
 type ContentProps = {
   top: number
   left: number
-  height: number
-  width: number
-}
+} & Measurements
 
 const Wrapper = styled.div`
   position: relative;
@@ -46,7 +46,3 @@ export const GameField: React.FC<GameFieldProps> = ({
     </Content>
   </Wrapper>
 )
-
-// styled.div`
-//   position: absolute;
-// `
