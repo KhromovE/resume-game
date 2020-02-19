@@ -3,20 +3,17 @@ import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
 import { Measurements } from '../../../../lib/createGameObject'
 
-type GameFieldProps = {
-  background: React.ReactNode
-  content: {
-    left: number
-    top: number
-    height: number
-    width: number
-  }
+type Position = {
+  left: number
+  top: number
 }
 
-type ContentProps = {
-  top: number
-  left: number
-} & Measurements
+type GameFieldProps = {
+  background: React.ReactNode
+  content: Position & Measurements
+}
+
+type ContentProps = Position & Measurements
 
 const Wrapper = styled.div`
   position: relative;
