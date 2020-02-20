@@ -1,8 +1,10 @@
-import styled, { css, FlattenSimpleInterpolation, StyledComponent } from 'styled-components'
+import styled, { css, FlattenSimpleInterpolation, AnyStyledComponent } from 'styled-components'
 
 import { Point } from '../../../lib/createGameObject'
 
-export const styledSprite = sprite => styled(sprite)<Point>`
+export const styledSprite = (sprite: AnyStyledComponent): AnyStyledComponent => styled(sprite)<
+  Point
+>`
   position: absolute;
 
   ${({ x, y }): FlattenSimpleInterpolation => css`
