@@ -2,13 +2,15 @@ import styled, { css, FlattenSimpleInterpolation, AnyStyledComponent } from 'sty
 
 import { Point } from '../../../lib/createGameObject'
 
+const changePosition = ({ x, y }: Point): FlattenSimpleInterpolation => css`
+  left: ${x}px;
+  top: ${y}px;
+`
+
 export const styledSprite = (sprite: AnyStyledComponent): AnyStyledComponent => styled(sprite)<
   Point
 >`
   position: absolute;
 
-  ${({ x, y }): FlattenSimpleInterpolation => css`
-    left: ${x}px;
-    top: ${y}px;
-  `}
+  ${changePosition}
 `
