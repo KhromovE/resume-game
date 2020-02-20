@@ -1,0 +1,1 @@
+export { styledSprite } from './sprite'

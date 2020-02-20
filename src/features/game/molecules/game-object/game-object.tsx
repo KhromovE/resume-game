@@ -8,13 +8,15 @@ type ContentProps = {
   left: number
 }
 
-const Wrapper = styled.div<ContentProps>`
-  position: absolute;
+const Wrapper = styled(React.Fragment)<ContentProps>`
+  & > svg {
+    position: absolute;
 
-  ${({ left, top }): FlattenSimpleInterpolation => css`
-    left: ${left}px;
-    top: ${top}px;
-  `}
+    ${({ left, top }): FlattenSimpleInterpolation => css`
+      left: ${left}px;
+      top: ${top}px;
+    `}
+  }
 `
 
 export const GameObject: React.FC<Point> = ({ x, y, children }) => (
