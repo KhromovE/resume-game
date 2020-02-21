@@ -3,11 +3,8 @@ import { useStore } from 'effector-react'
 
 import { GameField } from '../../templates'
 import Room from '../../../../assets/room.svg'
-import Laptop from '../../../../assets/laptop.svg'
-import Character from '../../../../assets/character.svg'
-import { GameObject } from '../../molecules'
 import { $table, $laptop, $character } from './model'
-import { Table } from '../../atoms'
+import { Table, Laptop, Character } from '../../atoms'
 
 const contentProps = {
   top: 393,
@@ -24,12 +21,8 @@ export const Map: React.FC = () => {
   return (
     <GameField background={<Room />} content={contentProps}>
       <Table x={table.x} y={table.y} />
-      <GameObject x={laptop.x} y={laptop.y}>
-        <Laptop />
-      </GameObject>
-      <GameObject x={character.x} y={character.y}>
-        <Character />
-      </GameObject>
+      <Laptop x={laptop.x} y={laptop.y} />
+      <Character x={character.x} y={character.y} />
     </GameField>
   )
 }
