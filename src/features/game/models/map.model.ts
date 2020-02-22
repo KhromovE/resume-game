@@ -1,6 +1,7 @@
 import * as R from 'ramda'
 
 import { createGameObject } from '../../../lib/createGameObject'
+import { createKeyBoardServie } from '../../../lib/createKeyboardService'
 import { changeCharacterPosition } from './map.events'
 
 export const $tableObject = createGameObject({ x: 0, y: 0, width: 87, height: 91 })
@@ -11,3 +12,5 @@ export const $characterObject = createGameObject({
   width: 131,
   height: 76,
 }).on(changeCharacterPosition, (state, payload) => R.mergeRight(state, payload))
+
+createKeyBoardServie()
