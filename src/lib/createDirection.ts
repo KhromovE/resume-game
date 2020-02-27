@@ -19,7 +19,12 @@ const DOWN = 83
 const LEFT = 65
 const RIGHT = 68
 const takeKeyCode = R.prop<'keyCode', number>('keyCode')
-const compareDircetionWithPart = ([direction, part]: [Direction, SingleDirection]): boolean => {
+const compareDircetionWithPart = ([direction, part]: [
+  Direction,
+  SingleDirection | undefined,
+]): boolean => {
+  if (part === undefined) return false
+
   const [partKey, partValue] = part
   const dirValue = R.prop(partKey, direction)
 
