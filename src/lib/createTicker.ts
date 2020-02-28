@@ -12,14 +12,26 @@ const removeFromList = R.curry((list: Set<Function>, cb: Function): void => {
   list.delete(cb)
 })
 
-export const createTicker = (time = 200): Ticker => {
+// const ticker = (time: number): void => {
+//   const tick = () => {
+
+//   }
+//   setTimeout(() => {
+
+//   }, time)
+// }
+
+export const createTicker = (): Ticker => {
   const cbList = new Set<Function>()
   const add = addToList(cbList)
   const remove = removeFromList(cbList)
 
-  setInterval(() => {
+  const tick = (): void => {
     cbList.forEach(cb => cb())
-  }, time)
+    requestAnimationFrame(tick)
+  }
+
+  requestAnimationFrame(tick)
 
   return {
     add,
