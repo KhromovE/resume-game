@@ -12,15 +12,6 @@ const removeFromList = R.curry((list: Set<Function>, cb: Function): void => {
   list.delete(cb)
 })
 
-// const ticker = (time: number): void => {
-//   const tick = () => {
-
-//   }
-//   setTimeout(() => {
-
-//   }, time)
-// }
-
 export const createTicker = (): Ticker => {
   const cbList = new Set<Function>()
   const add = addToList(cbList)
