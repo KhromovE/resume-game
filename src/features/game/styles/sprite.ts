@@ -1,15 +1,15 @@
 import React from 'react'
-import styled, { css, FlattenSimpleInterpolation, AnyStyledComponent } from 'styled-components'
+import styled, { AnyStyledComponent } from 'styled-components'
 
 import { Point } from '../../../lib/createGameObject'
 
-const changePosition = ({ x, y }: Point): FlattenSimpleInterpolation => css`
-  left: ${x}px;
-  top: ${y}px;
-`
-
-export const styledSprite = (sprite: React.FC): AnyStyledComponent => styled(sprite)<Point>`
+export const styledSprite = (sprite: React.FC): AnyStyledComponent => styled(sprite).attrs(
+  ({ x, y }: Point) => ({
+    style: {
+      left: `${x}px`,
+      top: `${y}px`,
+    },
+  }),
+)<Point>`
   position: absolute;
-
-  ${changePosition}
 `
