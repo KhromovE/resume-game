@@ -1,4 +1,4 @@
-import { sample } from 'effector'
+import { sample, combine } from 'effector'
 import * as R from 'ramda'
 
 import { createGameObject } from '../../../lib/createGameObject'
@@ -16,9 +16,57 @@ export const $characterObject = createGameObject({
 }).on(changeCharacterPosition, (state, payload) => R.mergeRight(state, payload))
 
 const { $direction } = createDirection()
-const ticker = createTicker(200)
+const ticker = createTicker()
 
 ticker.add(moveCharacter)
+
+sample({
+  source: combine({ character: $characterObject, direction: $direction }),
+  clock: moveCharacter,
+  fn: ({ character, direction }) =>
+    R.reduce(
+      (acc, item) => {
+        let newCharacter = acc || character
+        // R.when(R.always(R.equals(item, 'right')), R.always(newCharacter))
+        if (item === 'right') {
+          newCharacter = {
+            ...newCharacter,
+            x: newCharacter.x + 1,
+            y: newCharacter.y - 1,
+          }
+        }
+
+        if (item === 'up') {
+          newCharacter = {
+            ...newCharacter,
+            x: newCharacter.x - 1,
+            y: newCharacter.y - 1,
+          }
+        }
+
+        if (item === 'down') {
+          newCharacter = {
+            ...newCharacter,
+            x: newCharacter.x + 1,
+            y: newCharacter.y + 1,
+          }
+        }
+
+        if (item === 'left') {
+          newCharacter = {
+            ...newCharacter,
+            x: newCharacter.x - 1,
+            y: newCharacter.y + 1,
+          }
+        }
+
+        return newCharacter
+      },
+      character,
+      direction,
+    ),
+  target: $characterObject,
+})
 
 sample({
   source: $characterObject,
