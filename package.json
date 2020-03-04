@@ -20,9 +20,8 @@
   "dependencies": {
     "effector": "^20.11.5",
     "effector-react": "^20.6.0",
+    "preact": "^10.3.3",
     "ramda": "^0.27.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
     "styled-components": "^5.0.1"
   },
   "devDependencies": {
@@ -52,6 +51,7 @@
     "typescript": "^3.8.2"
   },
   "alias": {
-    "@src": "src"
+    "react": "preact/compat",
+    "react-dom": "preact/compat"
   }
 }
