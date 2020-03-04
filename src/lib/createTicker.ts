@@ -1,14 +1,14 @@
-import * as R from 'ramda'
+import { curry } from 'ramda'
 
 type Ticker = {
   add: Function
   remove: Function
 }
 
-const addToList = R.curry((list: Set<Function>, cb: Function): void => {
+const addToList = curry((list: Set<Function>, cb: Function): void => {
   list.add(cb)
 })
-const removeFromList = R.curry((list: Set<Function>, cb: Function): void => {
+const removeFromList = curry((list: Set<Function>, cb: Function): void => {
   list.delete(cb)
 })
 

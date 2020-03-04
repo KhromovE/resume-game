@@ -1,5 +1,5 @@
 import { sample, combine } from 'effector'
-import * as R from 'ramda'
+import { mergeRight, reduce } from 'ramda'
 
 import { createGameObject } from '../../../lib/createGameObject'
 import { createDirection } from '../../../lib/createDirection'
@@ -13,7 +13,7 @@ export const $characterObject = createGameObject({
   y: 0,
   width: 131,
   height: 76,
-}).on(changeCharacterPosition, (state, payload) => R.mergeRight(state, payload))
+}).on(changeCharacterPosition, (state, payload) => mergeRight(state, payload))
 
 const { $direction } = createDirection()
 const ticker = createTicker()
@@ -24,7 +24,7 @@ sample({
   source: combine({ character: $characterObject, direction: $direction }),
   clock: moveCharacter,
   fn: ({ character, direction }) =>
-    R.reduce(
+    reduce(
       (acc, item) => {
         let newCharacter = acc || character
         // R.when(R.always(R.equals(item, 'right')), R.always(newCharacter))
