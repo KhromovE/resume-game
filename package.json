@@ -15,7 +15,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src/ --ext .ts"
   },
-  "author": "",
+  "author": "Egor Khromov",
   "license": "ISC",
   "dependencies": {
     "@types/react": "^16.9.23",

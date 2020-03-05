@@ -6,14 +6,20 @@ import { createDirection } from '../../../lib/createDirection'
 import { createTicker } from '../../../lib/createTicker'
 import { changeCharacterPosition, moveCharacter } from './map.events'
 
-export const $tableObject = createGameObject({ x: 0, y: 0, width: 87, height: 91 })
-export const $laptopObject = createGameObject({ x: 410, y: 15, width: 87, height: 91 })
+export const $tableObject = createGameObject({ x: 0, y: 0, width: 231, height: 101 })
+export const $laptopObject = createGameObject({ x: -70, y: -70, width: 78, height: 48 })
 export const $characterObject = createGameObject({
-  x: 0,
-  y: 0,
-  width: 131,
-  height: 76,
+  x: 90,
+  y: 120,
+  width: 92,
+  height: 92,
 }).on(changeCharacterPosition, (state, payload) => mergeRight(state, payload))
+export const $contentObject = createGameObject({
+  x: 117,
+  y: 393,
+  width: 686,
+  height: 572,
+})
 
 const { $direction } = createDirection()
 const ticker = createTicker()
@@ -21,13 +27,19 @@ const ticker = createTicker()
 ticker.add(moveCharacter)
 
 sample({
-  source: combine({ character: $characterObject, direction: $direction }),
+  source: combine({
+    character: $characterObject,
+    // direction: $direction,
+    content: $contentObject,
+  }),
   clock: moveCharacter,
-  fn: ({ character, direction }) =>
-    reduce(
+  fn: ({ character, direction, content }) => {
+    console.log(direction)
+
+    return reduce(
       (acc, item) => {
         let newCharacter = acc || character
-        // R.when(R.always(R.equals(item, 'right')), R.always(newCharacter))
+
         if (item === 'right') {
           newCharacter = {
             ...newCharacter,
@@ -64,7 +76,8 @@ sample({
       },
       character,
       direction,
-    ),
+    )
+  },
   target: $characterObject,
 })
 

@@ -1,31 +1,24 @@
 import React from 'react'
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
-import { Measurements } from '../../../../lib/createGameObject'
-
-type Position = {
-  left: number
-  top: number
-}
+import { GameObject } from '../../../../lib/createGameObject'
 
 type GameFieldProps = {
   background: React.ReactNode
-  content: Position & Measurements
+  content: GameObject
 }
-
-type ContentProps = Position & Measurements
 
 const Wrapper = styled.div`
   position: relative;
 `
 
-const Content = styled.div<ContentProps>`
+const Content = styled.div<GameObject>`
   position: absolute;
   transform: rotateX(54.7deg) rotateZ(45deg);
 
-  ${({ left, top, height, width }): FlattenSimpleInterpolation => css`
-    left: ${left}px;
-    top: ${top}px;
+  ${({ x, y, height, width }): FlattenSimpleInterpolation => css`
+    left: ${x}px;
+    top: ${y}px;
     height: ${height}px;
     width: ${width}px;
   `}
@@ -34,11 +27,11 @@ const Content = styled.div<ContentProps>`
 export const GameField: React.FC<GameFieldProps> = ({
   children,
   background,
-  content: { top, left, height, width },
+  content: { x, y, height, width },
 }) => (
   <Wrapper>
     {background}
-    <Content top={top} left={left} height={height} width={width}>
+    <Content x={x} y={y} height={height} width={width}>
       {children}
     </Content>
   </Wrapper>
