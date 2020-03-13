@@ -1,7 +1,11 @@
 import { createStore, createEvent, guard, Store, sample } from 'effector'
 import { isNil, not, contains, prop, cond, always, equals, concat, compose, without } from 'ramda'
 
-type SingleDirection = 'up' | 'down' | 'left' | 'right'
+type Up = 'up'
+type Dowm = 'down'
+type Left = 'left'
+type Right = 'right'
+type SingleDirection = Up | Dowm | Left | Right
 type Direction = SingleDirection[]
 
 type Result = {

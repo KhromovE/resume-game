@@ -29,13 +29,11 @@ ticker.add(moveCharacter)
 sample({
   source: combine({
     character: $characterObject,
-    // direction: $direction,
+    direction: $direction,
     content: $contentObject,
   }),
   clock: moveCharacter,
   fn: ({ character, direction, content }) => {
-    console.log(direction)
-
     return reduce(
       (acc, item) => {
         let newCharacter = acc || character

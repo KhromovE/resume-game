@@ -38,6 +38,6 @@ const prepareStyle = ({ object }: Props): Attrs => {
 // )
 
 export const styledSprite = (sprite: React.FC): AnyStyledComponent =>
-  styled(sprite).attrs(prepareStyle)<GameObject>`
+  styled(sprite).attrs(prepareStyle)`
     position: absolute;
   `
