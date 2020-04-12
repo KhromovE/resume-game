@@ -7,6 +7,7 @@ import { SceneTemplate } from '../../ui/templates'
 const Stage = styled.div`
   width: 920px;
   height: 955px;
+  color: var(--main-bg-color);
 `
 
 export const Main: React.FC = () => (

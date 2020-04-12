@@ -9,8 +9,7 @@ type Props = {
 
 type Attrs = {
   style: {
-    left: string
-    top: string
+    transform: string
   }
 }
 
@@ -27,17 +26,10 @@ const prepareStyle = ({ object }: Props): Attrs => {
 
   return {
     style: {
-      left: cordToPx(x),
-      top: cordToPx(y),
+      transform: `translate(${cordToPx(x)}, ${cordToPx(y)})`,
     },
   }
 }
-// compose<GameObject, number>(
-//   min,
-//   props<keyof GameObject>(['width', 'height']),
-// )
 
 export const styledSprite = (sprite: React.FC): AnyStyledComponent =>
-  styled(sprite).attrs(prepareStyle)`
-    position: absolute;
-  `
+  styled(sprite).attrs(prepareStyle)``

@@ -33,7 +33,7 @@ sample({
     content: $contentObject,
   }),
   clock: moveCharacter,
-  fn: ({ character, direction, content }) => {
+  fn: ({ character, direction }) => {
     return reduce(
       (acc, item) => {
         let newCharacter = acc || character
