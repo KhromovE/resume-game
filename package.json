@@ -19,7 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/react": "^16.9.31",
-    "effector": "^20.13.3",
+    "effector": "^20.14.0",
     "effector-react": "^20.6.3",
     "preact": "^10.3.3",
     "ramda": "^0.27.0",
